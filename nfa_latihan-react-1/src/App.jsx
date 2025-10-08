@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function Header() {
+  return(
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  );
+}
 
+function Footer() {
+  return(
+    <footer>
+      <h2>NF Academy</h2>
+      <p>Created in React JS</p>
+    </footer>
+  );
+}
+
+function Content() {
+  return(
+    <h1>Content</h1>
+  );
+}
+
+function Hello() {
+  const nama = "Zidan";
+  return(
+    <>
+      <h2>Hello React!</h2>
+      <p>Saya {nama} - Seorang developer fullstack.</p>
+    </>
+  );
+}
+
+function Greeting(props) {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h2>Hello, {props.name}!</h2>
+      <p>You are {props.age} years old.</p>
+      <p>You live in {props.country}.</p>
     </>
   )
+}
+
+function App() {
+  return(
+    <>
+      <Header />
+      <Content />
+      <Hello />
+      <Greeting name="Zidan" />
+      <Profile name="Zidan" age={20} country="Indonesia" />
+      <Footer />
+    </>
+  );
+}
+
+function Profile(props) {
+  return(
+    <>
+      <h1>{[props.name]}</h1>
+    </>
+  );
 }
 
 export default App
