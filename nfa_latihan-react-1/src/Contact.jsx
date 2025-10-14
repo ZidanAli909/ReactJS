@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function Contact() {
   return (
     <>
@@ -5,43 +7,29 @@ function Contact() {
       <div className="container">
         <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
           <div className="col-md-3 mb-2 mb-md-0">
-            <a
-              className="d-inline-flex align-items-center link-body-emphasis text-decoration-none"
-              href="/"
-            >
+            <a className="d-inline-flex align-items-center link-body-emphasis text-decoration-none"
+            href="/">
               <i className="fa-solid fa-book fa-2xl"></i>
               <span className="ms-2 fs-4">Bookstore</span>
             </a>
           </div>
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2">
-                Home
-              </a>
+              <Link to="/" className="nav-link px-2">Home</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">
-                Books
-              </a>
+              <Link to="/" className="nav-link px-2">Books</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">
-                Team
-              </a>
+              <Link to="/team" className="nav-link px-2">Team</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 link-secondary">
-                Contact
-              </a>
+              <Link to="/contact" className="nav-link px-2 link-secondary">Contact</Link>
             </li>
           </ul>
           <div className="col-md-3 text-end">
-            <button type="button" className="btn btn-outline-primary me-2">
-              Login
-            </button>
-            <button type="button" className="btn btn-primary">
-              Register
-            </button>
+            <button type="button" className="btn btn-outline-primary me-2">Login</button>
+            <button type="button" className="btn btn-primary">Register</button>
           </div>
         </header>
       </div>
@@ -54,13 +42,13 @@ function Contact() {
           </p>
         </div>
         <div className="card mx-auto my-3" style={{ maxWidth: "720px", overflow: "hidden" }}>
-          <div class="row g-0">
-            <div class="col-md-3">
-              <img src="img_passphoto.webp" class="img-fluid" alt="Pasfoto" />
+          <div className="row g-0">
+            <div className="col-md-3">
+              <img src="img_passphoto.webp" className="img-fluid" alt="Pasfoto" />
             </div>
-            <div class="col-md-9">
-              <div class="card-body">
-                <table class="table table-borderless table-sm table-responsive">
+            <div className="col-md-9">
+              <div className="card-body">
+                <table className="table table-borderless table-sm table-responsive">
                   <tr>
                     <th scope="row">Nama</th>
                     <td>Ahmad Zidan Ali</td>

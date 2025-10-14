@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function Team() {
   return (
     <>
@@ -5,43 +7,29 @@ function Team() {
       <div className="container">
         <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
           <div className="col-md-3 mb-2 mb-md-0">
-            <a
-              className="d-inline-flex align-items-center link-body-emphasis text-decoration-none"
-              href="/"
-            >
+            <a className="d-inline-flex align-items-center link-body-emphasis text-decoration-none"
+            href="/">
               <i className="fa-solid fa-book fa-2xl"></i>
               <span className="ms-2 fs-4">Bookstore</span>
             </a>
           </div>
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2">
-                Home
-              </a>
+              <Link to="/" className="nav-link px-2">Home</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">
-                Books
-              </a>
+              <Link to="/" className="nav-link px-2">Books</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 link-secondary">
-                Team
-              </a>
+              <Link to="/team" className="nav-link px-2 link-secondary">Team</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">
-                Contact
-              </a>
+              <Link to="/contact" className="nav-link px-2">Contact</Link>
             </li>
           </ul>
           <div className="col-md-3 text-end">
-            <button type="button" className="btn btn-outline-primary me-2">
-              Login
-            </button>
-            <button type="button" className="btn btn-primary">
-              Register
-            </button>
+            <button type="button" className="btn btn-outline-primary me-2">Login</button>
+            <button type="button" className="btn btn-primary">Register</button>
           </div>
         </header>
       </div>
@@ -54,11 +42,11 @@ function Team() {
       </div>
 
       <section className="container" id="team">
-        <div class="row">
-          <div class="col-lg-4">
+        <div className="row">
+          <div className="col-lg-4">
             <svg
               aria-label="Placeholder"
-              class="bd-placeholder-img rounded-circle"
+              className="bd-placeholder-img rounded-circle"
               height="140"
               preserveAspectRatio="xMidYMid slice"
               role="img"
@@ -72,21 +60,21 @@ function Team() {
                 fill="var(--bs-secondary-color)"
               ></rect>
             </svg>
-            <h2 class="fw-normal">Ahmad Zidan Ali</h2>
+            <h2 className="fw-normal">Ahmad Zidan Ali</h2>
             <p>
               Some representative placeholder content for the three columns of
               text below the carousel. This is the first column.
             </p>
             <p>
-              <a class="btn btn-secondary" href="#">
+              <a className="btn btn-secondary" href="#">
                 View details »
               </a>
             </p>
           </div>
-          <div class="col-lg-4">
+          <div className="col-lg-4">
             <svg
               aria-label="Placeholder"
-              class="bd-placeholder-img rounded-circle"
+              className="bd-placeholder-img rounded-circle"
               height="140"
               preserveAspectRatio="xMidYMid slice"
               role="img"
@@ -100,21 +88,21 @@ function Team() {
                 fill="var(--bs-secondary-color)"
               ></rect>
             </svg>
-            <h2 class="fw-normal">Zidan Ahmad Ali</h2>
+            <h2 className="fw-normal">Zidan Ahmad Ali</h2>
             <p>
               Another exciting bit of representative placeholder content. This
               time, we've moved on to the second column.
             </p>
             <p>
-              <a class="btn btn-secondary" href="#">
+              <a className="btn btn-secondary" href="#">
                 View details »
               </a>
             </p>
           </div>
-          <div class="col-lg-4">
+          <div className="col-lg-4">
             <svg
               aria-label="Placeholder"
-              class="bd-placeholder-img rounded-circle"
+              className="bd-placeholder-img rounded-circle"
               height="140"
               preserveAspectRatio="xMidYMid slice"
               role="img"
@@ -128,13 +116,13 @@ function Team() {
                 fill="var(--bs-secondary-color)"
               ></rect>
             </svg>
-            <h2 class="fw-normal">Ali Zidan Ahmad</h2>
+            <h2 className="fw-normal">Ali Zidan Ahmad</h2>
             <p>
               And lastly this, the third column of representative placeholder
               content.
             </p>
             <p>
-              <a class="btn btn-secondary" href="#">
+              <a className="btn btn-secondary" href="#">
                 View details »
               </a>
             </p>

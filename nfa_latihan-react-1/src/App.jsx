@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./App.css";
 
 function AlbumSample() {
@@ -50,16 +51,16 @@ function App() {
           </div>
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2 link-secondary">Home</a>
+              <Link to="/" className="nav-link px-2 link-secondary">Home</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">Books</a>
+              <Link to="/" className="nav-link px-2">Books</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">Team</a>
+              <Link to="/team" className="nav-link px-2">Team</Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2">Contact</a>
+              <Link to="/contact" className="nav-link px-2">Contact</Link>
             </li>
           </ul>
           <div className="col-md-3 text-end">
