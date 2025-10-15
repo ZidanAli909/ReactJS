@@ -18,7 +18,7 @@ function Contact() {
               <Link to="/" className="nav-link px-2">Home</Link>
             </li>
             <li>
-              <Link to="/" className="nav-link px-2">Books</Link>
+              <Link to="/books" className="nav-link px-2">Books</Link>
             </li>
             <li>
               <Link to="/team" className="nav-link px-2">Team</Link>

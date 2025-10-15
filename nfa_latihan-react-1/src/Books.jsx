@@ -1,9 +1,26 @@
 import { Link } from "react-router";
-import "./App.css";
 import BookThumbCard from "./book";
 import bookData from "./utils/books";
+import { useState } from "react";
 
 function App() {
+  const [bookList, setBookList] = useState([...bookData]);
+
+  const handleClick = () => {
+    const newBook = {
+      id: bookList.length + 1,
+      title: "Lorem Ipsum Dolor Sit Amet",
+      author: "Lorem Ipsum Dolor",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      year: new Date().getFullYear(),
+      image: "https://example.com/images/lorem-ipsum-dolor-sit-amet.jpg",
+    };
+
+    setBookList((prevBook) => [...prevBook, newBook]);
+
+    alert(`Buku "${newBook.title}" berhasil ditambahkan! Total buku: ${bookList.length + 1}`);
+  }
+
   return (
     <>
       {/* Header */}
@@ -18,10 +35,10 @@ function App() {
           </div>
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <Link to="/" className="nav-link px-2 link-secondary">Home</Link>
+              <Link to="/" className="nav-link px-2">Home</Link>
             </li>
             <li>
-              <Link to="/books" className="nav-link px-2">Books</Link>
+              <Link to="/books" className="nav-link px-2 link-secondary">Books</Link>
             </li>
             <li>
               <Link to="/team" className="nav-link px-2">Team</Link>
@@ -36,31 +53,7 @@ function App() {
           </div>
         </header>
       </div>
-      {/* Hero */}
-      <div className="container my-5">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-          <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 className="display-4 fw-bold lh-1 text-body-emphasis">
-              Welcome to Bookstore!
-            </h1>
-            <p className="lead">
-              Books are windows to the world, and we are here to connect them with people who want to read and write.
-            </p>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-              <button className="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
-              type="button">Register</button>
-              <button className="btn btn-outline-secondary btn-lg px-4"
-              type="button">Login</button>
-            </div>
-          </div>
-          <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-            <img className="rounded-lg-3"
-            src="https://picsum.photos/720/480" alt=""
-            width="720"/>
-          </div>
-        </div>
-      </div>
-      {/* Product Albums */}
+      {/* Books Pages */}
       <section>
         <section className="py-5 text-center container">
           <div className="row py-lg-5">
@@ -69,17 +62,29 @@ function App() {
               <p className="lead text-body-secondary">
                 Check out these cool books that are more pricey because government. Get these books now before they are banned!
               </p>
+              <p>
+                <a href="#" className="btn btn-primary my-2 mx-1">Most Trending</a>
+                <a href="#" className="btn btn-secondary my-2 mx-1">Top Seller</a>
+                <a href="#" className="btn btn-secondary my-2 mx-1">Top Controversial</a>
+                <a href="#" className="btn btn-secondary my-2 mx-1">Just Released</a>
+              </p>
             </div>
           </div>
         </section>
         <div className="album py-5 bg-body-tertiary">
           <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              {bookData.map((book) => (
+              {bookList.map((book) => (
                 <BookThumbCard key={book.id} book={book} />
               ))}
             </div>
           </div>
+        </div>
+      </section>
+      {/* Add Book Pages */}
+      <section className="container">
+        <div className="text-center">
+          <button type="button" className="btn btn-primary" onClick={handleClick}>Add Book</button>
         </div>
       </section>
       {/* Footer */}
